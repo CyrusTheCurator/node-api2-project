@@ -127,7 +127,10 @@ router.delete("/:id", (req, res) => {
       post > 0
         ? res
             .status(200)
-            .json({ message: `successfully deleted post`, post: deletedPost })
+            .json({
+              message: `successfully deleted post`,
+              post: deletedPost[0],
+            })
         : res.status(404).json({ error: "post not found" });
     })
     .catch((err) => {
